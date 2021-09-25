@@ -1,5 +1,5 @@
 while True:
-    print('Enter command')
+    print('Hello,Enter command')
     command=str(input())
     if command=='exit':
         break
