@@ -1,4 +1,5 @@
 #converter and making conflicts
+#type smth just for conflict
 units=['g', 'm','m','s','s']
 units_alternative=['gram', 'metre','minute','sec','sec']
 units_pairs=['stone','km','h','min','h']
