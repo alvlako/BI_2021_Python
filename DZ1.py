@@ -31,9 +31,9 @@ while True:
         nucleic_acid_type=str(input())
         complement_seq=user_seq
         for letter in complement_seq:
-            if nucleic_acid_type =='D':
+            if nucleic_acid_type == 'D':
                 complement_seq=complement_seq.replace(letter,complement_table_DNA[letter])
-            if nucleic_acid_type =='R':
+            if nucleic_acid_type == 'R':
                 complement_seq=complement_seq.replace(letter,complement_table_RNA[letter])
             else:
                 print('Wrong nucleic acid type. Try again!')
