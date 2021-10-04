@@ -1,9 +1,10 @@
 #converter and making conflicts
+#typing smt to make conflict
 units=['g', 'm','m','s','s']
 units_alternative=['gram', 'metre','minute','sec','sec']
 units_pairs=['stone','km','h','min','h']
 units_pairs_alt=['stone','kilometre','hour','minute','hour']
-convert_method=[6350.29318,1000,60,60,3600]
+convert_method=[6350.29318, 1000, 60, 60, 3600]
 while True:
     print("Available units: g,stone,m,km,min,s,m,h. Print exit to exit")
     user_exit=[]
