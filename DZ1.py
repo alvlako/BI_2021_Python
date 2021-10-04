@@ -1,10 +1,10 @@
 while True:
     print('Hello,Enter command')
     command=str(input())
-    if command=='exit':
+    if command == 'exit':
         break
     error_collector=1
-    while error_collector==1:
+    while error_collector == 1:
         print('Enter sequence')
         user_seq=str(input())
         for letter in user_seq:
@@ -31,9 +31,9 @@ while True:
         nucleic_acid_type=str(input())
         complement_seq=user_seq
         for letter in complement_seq:
-            if nucleic_acid_type=='D':
+            if nucleic_acid_type =='D':
                 complement_seq=complement_seq.replace(letter,complement_table_DNA[letter])
-            if nucleic_acid_type=='R':
+            if nucleic_acid_type =='R':
                 complement_seq=complement_seq.replace(letter,complement_table_RNA[letter])
             else:
                 print('Wrong nucleic acid type. Try again!')
