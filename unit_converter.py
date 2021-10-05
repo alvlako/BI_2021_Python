@@ -1,4 +1,3 @@
-#converter and making conflicts
 units = ['g', 'm', 'min']
 units_alternative = ['gram', 'metre', 'minute']
 units_pairs = ['stone', 'km', 'h']
@@ -48,3 +47,4 @@ while True:
         except ValueError:
             print("2nd unit is not supported")
     my_converter(unit_1, unit_2)
+    
