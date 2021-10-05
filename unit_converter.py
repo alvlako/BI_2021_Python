@@ -1,10 +1,11 @@
-units = ['g', 'm', 'm', 's', 's']
-units_alternative = ['gram', 'metre', 'minute', 'sec', 'sec']
-units_pairs = ['stone', 'km', 'h', 'min', 'h']
-units_pairs_alt = ['stone', 'kilometre', 'hour', 'minute', 'hour']
-convert_method = [6350.29318, 1000, 60, 60, 3600]
+#converter and making conflicts
+units = ['g', 'm', 'min']
+units_alternative = ['gram', 'metre', 'minute']
+units_pairs = ['stone', 'km', 'h']
+units_pairs_alt = ['stone', 'kilometre', 'hour']
+convert_method = [6350.29318, 1000, 60]
 while True:
-    print("Available units: g,stone,m,km,min,s,m,h. Print exit to exit")
+    print("Available units: g,stone,m,km,min,h. Print exit to exit")
     user_exit = []
     try:
         user_exit.append(input())
@@ -33,14 +34,17 @@ while True:
             index2 = (units+units_alternative+units_pairs+units_pairs_alt).index(unit_2)
             real_index2 = index2 % len(units)
             list_n_2 = index2//len(units)
+            if real_index1 == real_index2 and (list_n_1 == list_n_2 or list_n_1 == (list_n_2+1) or list_n_2 == (list_n_1+1)):
+                print("You typed the same units! It is not supported!")
+            if real_index1 != real_index2:
+                print("These types are not convertable")
+            if real_index1 == real_index2 and (list_n_1 != list_n_2 or list_n_1 != (list_n_2+1) or list_n_2 != (list_n_1+1)):
+                if list_n_1 > list_n_2:
+                    converted_value = unit_number*convert_method[real_index1]
+                    print(str(converted_value)+" "+str(unit_2))
+                if list_n_1 < list_n_2:
+                    converted_value = unit_number/convert_method[real_index2]
+                    print(str(converted_value)+" "+str(unit_2))
         except ValueError:
             print("2nd unit is not supported")
-        if real_index1 == real_index2 and (list_n_1 == list_n_2 or list_n_1 == (list_n_2+1) or list_n_2 == (list_n_1+1)):
-            print("You typed the same units! It is not supported!")
-        else:
-            if list_n_1 > list_n_2:
-                converted_value = unit_number*convert_method[real_index1]
-            if list_n_1 < list_n_2:
-                converted_value = convert_method[real_index2]/unit_number
-        print(str(converted_value)+" "+str(unit_2))
     my_converter(unit_1, unit_2)
