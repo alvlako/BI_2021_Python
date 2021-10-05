@@ -47,4 +47,3 @@ while True:
         except ValueError:
             print("2nd unit is not supported")
     my_converter(unit_1, unit_2)
-    
