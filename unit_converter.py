@@ -3,7 +3,7 @@ units = ['g', 'm', 'm', 's', 's']
 units_alternative = ['gram', 'metre', 'minute', 'sec', 'sec']
 units_pairs = ['stone', 'km', 'h', 'min', 'h']
 units_pairs_alt = ['stone', 'kilometre', 'hour', 'minute', 'hour']
-convert_method=[6350.29318, 1000, 60, 60, 3600]
+convert_method = [6350.29318, 1000, 60, 60, 3600]
 while True:
     print("Available units: g,stone,m,km,min,s,m,h. Print exit to exit")
     user_exit = []
@@ -26,13 +26,13 @@ while True:
     def my_converter(unit_1, unit_2):
         try:
             index1 = (units+units_alternative+units_pairs+units_pairs_alt).index(unit_1)
-            real_index1 = index1%len(units)
+            real_index1 = index1 % len(units)
             list_n_1 = index1//len(units)
         except ValueError:
             print("1st unit is not supported")
         try:
             index2 = (units+units_alternative+units_pairs+units_pairs_alt).index(unit_2)
-            real_index2 = index2%len(units)
+            real_index2 = index2 % len(units)
             list_n_2 = index2//len(units)
         except ValueError:
             print("2nd unit is not supported")
@@ -40,8 +40,8 @@ while True:
             print("You typed the same units! It is not supported!")
         else:
             if list_n_1 > list_n_2:
-                converted_value=unit_number*convert_method[real_index1]
+                converted_value = unit_number*convert_method[real_index1]
             if list_n_1 < list_n_2:
-                converted_value=convert_method[real_index2]/unit_number
+                converted_value = convert_method[real_index2]/unit_number
         print(str(converted_value)+" "+str(unit_2))
     my_converter(unit_1, unit_2)
