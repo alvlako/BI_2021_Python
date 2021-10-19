@@ -134,7 +134,8 @@ if y == 'y':
                 output_file_failed = input()
                 
 # reading and checking the validity of gc content bounds input
-print('Please, specify your desired gc content bounds. You can type 2 thresholds or only one which will be considered as a higher one. The default options are 0, 100. Please enter your values as following (in one string) 0 100')
+print('Please, specify your desired gc content bounds. You can type 2 thresholds or only one which will be considered as a higher one.')
+print('The default options are 0, 100. Please enter your values as following (in one string) 0 100')
 gc_bounds = str(input()).split(' ')
 if gc_bounds == '':
     gc_bounds = [0, 100]
@@ -177,7 +178,6 @@ else:
         except ValueError:
             print('It must be a number, not a character')
             quality_threshold = input()
-            
 # opening files and processing of lines in input file
 input_fastq = open(input_fastq)
 output_file_passed = open(output_file_passed, 'w')
@@ -188,8 +188,9 @@ input_list = input_fastq.readlines()
 
 # main function
 def main(input_list, quality_threshold, save_filtered, length_bounds, gc_bounds):
-    #little functions running, this function will call others and merge the lists to the final files
+    # little functions running, this function will call others and merge the lists to the final files
     return filter_quality(input_list, quality_threshold, save_filtered, length_bounds, gc_bounds)
+
 
 # call of main function and writing results to files
 passed_reads, failed_reads = main(input_list, quality_threshold, save_filtered, length_bounds, gc_bounds)
