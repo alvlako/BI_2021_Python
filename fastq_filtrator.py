@@ -88,7 +88,7 @@ while True:
         else:
             print('Wrong file format, must be fastq')
             input_fastq = input()
-            
+
 # reading and checking the validity of output file format
 print('Please, specify the path to the output fastq file with reads passed the filtration step')
 output_file_passed = input()
@@ -102,8 +102,8 @@ while True:
             break
         else:
             print('Wrong file format, must be fastq')
-            output_file_passed = input()
-                
+            output_file_passed = input()       
+
 # asking whether failed reads are needed to be saved and checking for the validity of answer
 print('Would you like to save filtered results (filtration failed)? Type y/n')
 y = str(input())
@@ -181,7 +181,7 @@ else:
 # opening files and processing of lines in input file
 input_fastq = open(input_fastq)
 output_file_passed = open(output_file_passed, 'w')
-if y== 'y':
+if y == 'y':
     output_file_failed = open(output_file_failed, 'w')
 input_list = input_fastq.readlines()
 
