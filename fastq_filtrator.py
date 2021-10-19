@@ -1,4 +1,4 @@
-##Here is fastq filtrator
+#Here is fastq filtrator
 
 #GC-filtering
 def filter_gc(input_list, gc_bounds, save_filtered):
@@ -13,7 +13,7 @@ def filter_gc(input_list, gc_bounds, save_filtered):
                 input_list_1.append(input_list[n+1])
                 input_list_1.append(input_list[n+2])
             else:
-                if save_filtered == True:
+                if save_filtered is True:
                     output_list_failed_1.append(input_list[n-1])
                     output_list_failed_1.append(input_list[n])
                     output_list_failed_1.append(input_list[n+1])
@@ -26,7 +26,7 @@ def filter_length(input_list, length_bounds, save_filtered, gc_bounds):
     input_list_2 = list()
     output_list_failed_2 = list()
     _, output_from_1 = filter_gc(input_list, gc_bounds, save_filtered)
-    for n in range (0, len(input_list)):
+    for n in range(0, len(input_list)):
         if n % 4 == 1:
             length = len(input_list[n])
             if length > int(length_bounds[0]) and length < int(length_bounds[1]):
@@ -48,7 +48,7 @@ def filter_quality(input_list, quality_threshold, save_filtered, length_bounds, 
     output_passed_final = list()
     output_list_failed_3 = list()
     _, output_from_2 = filter_length(input_list, length_bounds, save_filtered, gc_bounds)
-    for n in range (0, len(input_list)):
+    for n in range(0, len(input_list)):
         recoded = list()
         if n % 4 == 3:
             for i in input_list[n]:
