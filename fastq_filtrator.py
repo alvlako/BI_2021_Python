@@ -148,7 +148,7 @@ else:
         except ValueError:
             print('It must be a number, not a character')
             gc_bounds = str(input()).split(' ')
-            
+
 # reading and checking the validity of length content bounds input
 print('Please, specify your desired length bounds. You can type 2 thresholds or only one which will be considered as a higher one.')
 print('The default options are 0, 2**32. Please enter your values as following (in one string) 0 100')
