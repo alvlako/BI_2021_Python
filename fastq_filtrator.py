@@ -102,7 +102,7 @@ while True:
             break
         else:
             print('Wrong file format, must be fastq')
-            output_file_passed = input()       
+            output_file_passed = input()
 
 # asking whether failed reads are needed to be saved and checking for the validity of answer
 print('Would you like to save filtered results (filtration failed)? Type y/n')
@@ -114,7 +114,7 @@ while True:
     else:
         if y == 'n':
             save_filtered = False
-            break 
+            break
         else:
             print('Sorry, wrong format of answer')
 # reading and checking the validity of output file format for failed reads
@@ -132,7 +132,7 @@ if y == 'y':
             else:
                 print('Wrong file format, must be fastq')
                 output_file_failed = input()
-                
+
 # reading and checking the validity of gc content bounds input
 print('Please, specify your desired gc content bounds. You can type 2 thresholds or only one which will be considered as a higher one.')
 print('The default options are 0, 100. Please enter your values as following (in one string) 0 100')
