@@ -5,7 +5,7 @@
 def filter_gc(input_list, gc_bounds, save_filtered):
     input_list_1 = list()
     output_list_failed_1 = list()
-    for n in range (0, len(input_list)):
+    for n in range(0, len(input_list)):
         if n % 4 == 1:
             gc = 100*2*input_list[n].count('G')/len(input_list[n])
             if gc > int(gc_bounds[0]) and gc < int(gc_bounds[1]):
@@ -70,7 +70,8 @@ def filter_quality(input_list, quality_threshold, save_filtered, length_bounds, 
                     output_list_failed_3.append(input_list[n])
     # merging failed reads
     output_failed = output_from_2 + output_list_failed_3
-    return(output_passed_final,output_failed)
+    return(output_passed_final, output_failed)
+
 
 print('Hello, you are about to run fastq filtrator')
 # reading and checking the validity of input file format
