@@ -67,11 +67,7 @@ while True:
     def reverse_complement(user_seq):
         reverted_complement = str(complement(user_seq))[::-1]
         return reverted_complement
-    function_table = {'transcribe':transcribe, 'reverse':reverse, 'complement':
-    complement, 'reverse_complement':reverse_complement}
+    function_table = {'transcribe': transcribe, 'reverse': reverse, 'complement': complement, 'reverse_complement': reverse_complement}
     result = function_table[command](user_seq)
     if result is not None:
         print(result)
-
-
-
