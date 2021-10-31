@@ -27,6 +27,7 @@ while True:
     transcription_table = {'A': 'U', 'T': 'A', 'G': 'C', 'C': 'G', 'a': 'u', 't': 'a', 'g': 'c', 'c': 'g'}
     complement_table_DNA = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G', 'a': 't', 't': 'a', 'g': 'c', 'c': 'g'}
     complement_table_RNA = {'A': 'U', 'U': 'A', 'G': 'C', 'C': 'G', 'a': 'u', 'u': 'a', 'g': 'c', 'c': 'g'}
+    
     def transcribe(user_seq):
         transcribed_seq = user_seq
         transcribed_seq_final = ''
@@ -36,7 +37,6 @@ while True:
         except KeyError:
             print('Unknown nucleotides (did you type RNA sequence?)')
         return transcribed_seq_final
-    
     
     def reverse(user_seq):
         return user_seq[::-1]
@@ -70,7 +70,7 @@ while True:
     function_table = {'transcribe':transcribe, 'reverse':reverse, 'complement':
     complement, 'reverse_complement':reverse_complement}
     result = function_table[command](user_seq)
-    if result != None:
+    if result is not None:
         print(result)
 
 
