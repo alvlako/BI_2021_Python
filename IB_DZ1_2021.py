@@ -63,7 +63,7 @@ while True:
                     return complement_seq_final
                 except KeyError:
                     print('DNA nucleotides in RNA, try again!')
-        
+ 
     def reverse_complement(user_seq):
         reverted_complement = str(complement(user_seq))[::-1]
         return reverted_complement
