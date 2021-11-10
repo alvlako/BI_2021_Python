@@ -8,11 +8,12 @@ print(array_1)
 print(array_2)
 print(array_3)
 
+
 def matrix_multiplication(m1, m2):
     return(np.matmul(m1, m2))
 
 
-def  multiplication_check(m1, m2):
+def multiplication_check(m1, m2):
     try:
         if np.size(m1, 1) == np.size(m2, 0):
             return True
