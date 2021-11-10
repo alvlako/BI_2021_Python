@@ -11,6 +11,7 @@ print(array_3)
 def matrix_multiplication(m1, m2):
     return(np.matmul(m1, m2))
 
+
 def  multiplication_check(m1, m2):
     try:
         if np.size(m1, 1) == np.size(m2, 0):
@@ -23,6 +24,7 @@ def  multiplication_check(m1, m2):
         else:
             return False
 
+
 def multiply_matrices(m1, m2):
     try:
         np.matmul(m1, m2)
@@ -30,16 +32,17 @@ def multiply_matrices(m1, m2):
     except ValueError:
         return None
 
+
 def compute_2d_distance(v1, v2):
-    import math as mt
     return(sqrt((v1[0] - v2[0])**2 + (v1[1] - v2[1])**2))
+
 
 def compute_multidimensional_distance(v1, v2):
     sum_q = 0
-    import math as mt
     for i in range(0, len(v1)-1):
         sum_q = sum_q + (v1[i] - v2[i])**2
     return(sqrt(sum_q))
+
 
 def compute_pair_distances(m):
     size = np.size(m, 1)
