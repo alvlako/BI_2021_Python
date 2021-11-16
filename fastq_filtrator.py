@@ -211,8 +211,8 @@ else:
 
 # main function
 def main(input_fastq=input_fastq, quality_threshold=quality_threshold, save_filtered=save_filtered,
-        length_bounds=length_bounds, gc_bounds=gc_bounds, output_file_passed=output_file_passed,
-        output_file_failed=output_file_failed, output_file_prefix=prefix):
+         length_bounds=length_bounds, gc_bounds=gc_bounds, output_file_passed=output_file_passed,
+         output_file_failed=output_file_failed, output_file_prefix=prefix):
     with open(input_fastq) as input_fastq:
         input_list = input_fastq.read().splitlines()
     if output_file_prefix == 'False':
@@ -234,7 +234,8 @@ def main(input_fastq=input_fastq, quality_threshold=quality_threshold, save_filt
         output_file_failed.close()
     output_file_passed.close()
 
+
 # call of main function
 main(input_fastq=input_fastq, quality_threshold=quality_threshold, save_filtered=save_filtered,
-    length_bounds=length_bounds, gc_bounds=gc_bounds, output_file_passed=output_file_passed,
-    output_file_failed=output_file_failed, output_file_prefix=prefix)
+     length_bounds=length_bounds, gc_bounds=gc_bounds, output_file_passed=output_file_passed,
+     output_file_failed=output_file_failed, output_file_prefix=prefix)
