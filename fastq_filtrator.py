@@ -163,7 +163,7 @@ elif save_filtered is True and prefix != 'False':
     output_file_failed = prefix + '_failed.fastq'
 
 # reading and checking the validity of gc content bounds input
-print('Please, specify your gc content bounds. You can type 2 thresholds or only one which will be considered as a higher one.') 
+print('Please, specify your gc content bounds. You can type 2 thresholds or only one which will be considered as a higher one.')
 print('The default options are 0, 100. Please enter your values as following (in one string) 0 100')
 gc_bounds = str(input()).split(' ')
 if gc_bounds == '':
@@ -177,7 +177,7 @@ else:
         except ValueError:
             print('It must be a number, not a character')
             gc_bounds = str(input()).split(' ')
-          
+
 # reading and checking the validity of length content bounds input
 print('Please, specify your length bounds. You can type 2 thresholds or only one which will be considered as a higher one.')
 print('The default options are 0, 2**32. Please enter your values as following (in one string) 0 100')
@@ -211,24 +211,24 @@ else:
 
 # main function
 def main(input_fastq=input_fastq, quality_threshold=quality_threshold, save_filtered=save_filtered,
-length_bounds=length_bounds, gc_bounds=gc_bounds, output_file_passed=output_file_passed,
-output_file_failed=output_file_failed, output_file_prefix=prefix):
+        length_bounds=length_bounds, gc_bounds=gc_bounds, output_file_passed=output_file_passed,
+        output_file_failed=output_file_failed, output_file_prefix=prefix):
     with open(input_fastq) as input_fastq:
         input_list = input_fastq.read().splitlines()
     if output_file_prefix == 'False':
         output_file_passed = open(output_file_passed, 'w')
-        if save_filtered == True:
+        if save_filtered is True:
             output_file_failed = open(output_file_failed, 'w')
     else:
         output_file_passed = output_file_prefix + '_passed.fastq'
         output_file_passed = open(output_file_passed, 'w')
-        if save_filtered == True:
+        if save_filtered is True:
             output_file_failed = output_file_prefix + '_failed.fastq'
             output_file_failed = open(output_file_failed, 'w')
     passed_reads, failed_reads = filter_quality(input_list, quality_threshold, save_filtered, length_bounds, gc_bounds)
     for p in passed_reads:
         output_file_passed.write(p)
-    if save_filtered == True:
+    if save_filtered is True:
         for f in failed_reads:
             output_file_failed.write(f + '\n')
         output_file_failed.close()
@@ -236,5 +236,5 @@ output_file_failed=output_file_failed, output_file_prefix=prefix):
 
 # call of main function
 main(input_fastq=input_fastq, quality_threshold=quality_threshold, save_filtered=save_filtered,
-length_bounds=length_bounds, gc_bounds=gc_bounds, output_file_passed=output_file_passed,
-output_file_failed=output_file_failed, output_file_prefix=prefix)
+    length_bounds=length_bounds, gc_bounds=gc_bounds, output_file_passed=output_file_passed,
+    output_file_failed=output_file_failed, output_file_prefix=prefix)
