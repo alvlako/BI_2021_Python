@@ -34,3 +34,4 @@ After that you can run the `pip3 install command` on the requirements list from 
 
 Do not forget to deactivate conda environment after usage. Be careful and check if you are not already in the base environment, in this case the whole conda environment will be deactivated.
 `conda deactivate`
+
