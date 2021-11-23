@@ -1,0 +1,10 @@
+google==3.0.0
+google-api-core==2.2.2
+Kivy==2.0.0
+Biopython==1.79
+aiohttp==3.8.1
+pandas==1.3.4
+scipy==1.7.2
+opencv-python==4.5.4.60
+scanpy==1.8.2
+lxml==4.6.4
