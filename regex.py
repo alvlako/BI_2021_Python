@@ -84,7 +84,7 @@ with open(path2_1) as input2_1:
             i = i + 1
             word_dict[i] = 0
     length_list = list(word_dict.values())
-    
+
     plt.bar(word_dict.keys(), word_dict.values(), width=0.5, color='y')
     plt.xlabel('Word length')
     plt.ylabel('Count')
