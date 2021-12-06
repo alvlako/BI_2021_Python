@@ -33,14 +33,14 @@ def consensus_filter(*args):
     return(var_list)
 
 
-def conditional_reduce(fun1, fun2, l):
+def conditional_reduce(fun1, fun2, list_var):
     res_list = []
-    for i in range(1, len(l)):
-        i2 = l[i]
-        i1 = l[i-1]
+    for i in range(1, len(list_var)):
+        i2 = list_var[i]
+        i1 = list_var[i-1]
         res2 = fun2(i1, i2)
         res1 = fun1(res2)
-        if res1 != False:
+        if res1 is not False:
             res_list.append(res2)
     print(*res_list)
 
