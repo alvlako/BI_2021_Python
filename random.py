@@ -36,6 +36,8 @@ plt.show()
 # Task 3
 
 print("type n of steps in random walk")
+
+
 def random_walk(n):
     coord = [[0 for i in range(0, n)], [0 for i in range(0, n)]]
     i = 1
@@ -84,7 +86,7 @@ words = list(re.findall(pattern5, text, re.IGNORECASE))
 words_list = []
 for w in words:
     w1 = w[1:len(w)-1]
-    w1_rand = ''.join(random.sample(w1,len(w1)))
+    w1_rand = ''.join(random.sample(w1, len(w1)))
     w_rand = w[0] + w1_rand + w[len(w)-1]
     words_list.append(w_rand)
 print(*words_list)
