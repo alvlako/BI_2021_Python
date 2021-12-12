@@ -6,7 +6,7 @@ import sys
 parser = argparse.ArgumentParser()
 
 parser.add_argument("file", help="input")
-parser.add_argument("-n", "--number", type = int, default = 10, help="number of lines")
+parser.add_argument("-n", "--number", type=int, default=10, help="number of lines")
 
 # check if there is a pipe with stdin
 # remove positional argument for file if true
