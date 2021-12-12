@@ -33,10 +33,15 @@ read
 head
 
 `./wc.py -l ex.txt`
+
 Output: 3
+
 `./wc.py -c ex.txt`
+
 Output: 16
+
 `./wc.py -w ex.txt`
+
 Output: 3
 
 These outputs are consistent with the output from original Unix utility.
@@ -50,13 +55,21 @@ The script allows to list files and directories in the defined directory (curren
 The script allows to sort lines in the input file. 
 
 Input (content of the ex.txt file):
+
 touch
+
 read
+
 head
+
 `./sort.py ex.txt`
+
 Output:
+
 head
+
 read
+
 touch
 
 ### rm.py
@@ -68,12 +81,16 @@ Allows to remove the defined file. With the flag -r, allows to remove directory 
 Allows to print only unique lines from the defined file.
 
 Input (content of the ex.txt file):
+
 touch
 read
 head
 read
+
 `./uniq.py ex.txt`
+
 Output:
+
 head
 read
 touch
@@ -83,12 +100,16 @@ touch
 Allows to print the content of a file out.
 
 Input (content of the ex.txt file):
+
 touch
 read
 head
 read
+
 `./uniq.py ex.txt`
+
 Output:
+
 head
 read
 touch
@@ -99,6 +120,7 @@ read
 Allows to print from n lines from a file before the end. By default, number of lines is set to 10 but can be changed with the -n flag.
 
 Input (content of the ex.txt file):
+
 touch
 read
 head
@@ -111,8 +133,11 @@ let
 my
 people
 go
+
 `./tail.py ex.txt`
+
 Output:
+
 head
 read
 why
@@ -125,6 +150,7 @@ people
 go
 
 Input (content of the ex.txt file):
+
 touch
 read
 head
@@ -137,8 +163,11 @@ let
 my
 people
 go
+
 `./tail.py -n 3 ex.txt`
+
 Output:
+
 my
 people
 go
