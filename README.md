@@ -178,14 +178,24 @@ All the commands can read the input from stdin. In these cases positional argume
 Generally, multiple-line stdin inputs are supported (handled via internal cat analogue).
 
 `./tail.py ex.txt | ./wc.py -l`
+
 Output: 10
 
 Multiple lines stdin usage.
+
 `ls *txt`
-Output: 11.txt  111.txt
+
+Output: 
+11.txt  111.txt
+
 `./wc.py -l 11.txt`
+
 Output: 12
+
 `./wc.py -l 111.txt`
+
 Output: 3
+
 `ls *txt | ./wc.py -l`
+
 Output: 15
