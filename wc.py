@@ -44,11 +44,11 @@ if file1:
             count_b += len(line1.encode('utf-8'))
 else:
     for line2 in pipe_pass:
-      pattern5 = r'\w+'
-      words = list(re.findall(pattern5, line2))
-      count_w += len(words)
-      count_b += len(line2.encode('utf-8'))
-      count_l += 1
+        count_l += 1
+        pattern5 = r'\w+'
+        words = list(re.findall(pattern5, line2))
+        count_w += len(words)
+        count_b += len(line2.encode('utf-8'))
 
 if args.lines:
     print(count_l)
