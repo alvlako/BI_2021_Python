@@ -25,9 +25,13 @@ This script allows to reproduce original wc command results with -l, -c and -w f
 Examples:
 
 Input (content of the ex.txt file):
+
 touch
+
 read
+
 head
+
 `./wc.py -l ex.txt`
 Output: 3
 `./wc.py -c ex.txt`
