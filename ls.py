@@ -7,7 +7,7 @@ import os
 parser = argparse.ArgumentParser()
 
 current_dir = os.getcwd()
-parser.add_argument("dir", help="target directory", nargs='?', default = current_dir)
+parser.add_argument("dir", help="target directory", nargs='?', default=current_dir)
 parser.add_argument("-a", "--list", help="list hidden and normal",
                     action="store_true")
 
