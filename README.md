@@ -188,14 +188,6 @@ Multiple lines stdin usage.
 Output: 
 11.txt  111.txt
 
-`./wc.py -l 11.txt`
-
-Output: 12
-
-`./wc.py -l 111.txt`
-
-Output: 3
-
 `ls *txt | ./wc.py -l`
 
-Output: 15
+Output: 2
