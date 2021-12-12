@@ -56,4 +56,3 @@ else:
     else:
         for obj in pipe_pass:
             os.remove(obj)
-
