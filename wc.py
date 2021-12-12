@@ -51,11 +51,8 @@ else:
             count_b += len(line2.encode('utf-8'))
 
 if args.lines:
-    #print("asked for lines")
     print(count_l)
 if args.bytes:
-    #print("asked for bytes")
     print(count_b)
 if args.words:
-    #print("asked for words")
     print(count_w)
