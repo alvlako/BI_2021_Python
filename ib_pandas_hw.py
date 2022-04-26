@@ -5,7 +5,6 @@
 
 
 import pandas as pd
-import matplotlib
 import numpy as np
 import seaborn as sns
 
@@ -60,8 +59,8 @@ count_nuc.plot.bar(rot=0)
 print('Task 2. Extract specific columns')
 part_nuc = pd.DataFrame()
 part_nuc = nucl.loc[nucl['matches'] > np.mean(nucl['matches'])]
-part_nuc = part_nuc.drop(['A','T','G','C'], axis=1)
-part_nuc = part_nuc.drop(['A_fraction','T_fraction','G_fraction', 'C_fraction'],axis=1)
+part_nuc = part_nuc.drop(['A', 'T', 'G', 'C'], axis=1)
+part_nuc = part_nuc.drop(['A_fraction', 'T_fraction', 'G_fraction', 'C_fraction'],axis=1)
 print(part_nuc.head())
 
 
@@ -84,7 +83,7 @@ print(nucl.describe())
 fig, axs = plt.subplots(ncols=3, nrows=5, figsize=(20, 10))
 index = 0
 axs = axs.flatten()
-for i,j in nucl.items():
+for i, j in nucl.items():
     sns.boxplot(y=i, data=nucl, ax=axs[index])
     index += 1
 plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=5.0)
@@ -94,13 +93,13 @@ plt.show()
 # In[23]:
 
 
-print(nucl.isnull().sum().sort_values(ascending = False))
+print(nucl.isnull().sum().sort_values(ascending=False))
 
 
 # In[25]:
 
 
-print(nucl.isna().sum().sort_values(ascending = False))
+print(nucl.isna().sum().sort_values(ascending=False))
 
 
 # In[26]:
@@ -112,9 +111,8 @@ print(nucl.corr())
 # In[27]:
 
 
-h_labels = [x.replace('_', ' ').title() for x in 
-            list(nucl)]
-fig, ax = plt.subplots(figsize=(10,6))
+h_labels = [x.replace('_', ' ').title() for x in list(nucl)]
+fig, ax = plt.subplots(figsize=(10, 6))
 _ = sns.heatmap(nucl.corr(), annot=True, xticklabels=h_labels, yticklabels=h_labels, cmap=sns.cubehelix_palette(as_cmap=True), ax=ax)
 
 
@@ -123,6 +121,8 @@ _ = sns.heatmap(nucl.corr(), annot=True, xticklabels=h_labels, yticklabels=h_lab
 
 print('Additional task')
 # Make functions
+
+
 def read_gff(path):
     gff = pd.read_csv(path, sep='\t', comment='#', skiprows=1)
     gff.columns = ['chromosome', 'source', 'type', 'start', 'end', 'score', 'strand', 'phase', 'attributes']
@@ -144,8 +144,6 @@ def read_bed6(path):
     bed = pd.read_csv(path, sep='\t', comment='#', skiprows=1)
     bed.columns = ['chromosome', 'start', 'end', 'name', 'score', 'strand']
     return bed
-    
-
 
 # In[107]:
 
@@ -154,12 +152,10 @@ path1 = input()
 bed = read_bed6(path1)
 print(bed.head())
 
-
 # In[58]:
 
 
 print('Extract simple names of rRNA')
-import re
 rna_info = read_gff(path)
 rna_info_convenient = rna_info
 rna_info_convenient['attributes']=rna_info['attributes'].str.extract('(Name.*rRNA)')
@@ -172,10 +168,10 @@ print(rna_info_convenient.head())
 
 
 print('Count distinct rRNA types per chromosome')
-rna_dist = rna_info_convenient.filter(items=['chromosome','attributes'])
+rna_dist = rna_info_convenient.filter(items=['chromosome', 'attributes'])
 rna_dist['count'] = 1
 rna_dist.head()
-print(rna_dist.groupby(['chromosome','attributes']).sum())
+print(rna_dist.groupby(['chromosome', 'attributes']).sum())
 
 
 # In[117]:
@@ -191,10 +187,3 @@ annot_read_end = [x-1 for x in annot_ind_list]
 save = annot_read_start + annot_read_end + annot_ind_list
 merged1 = merged.iloc[save]
 print(merged1.sort_values(by='start').head())
-
-
-# In[ ]:
-
-
-
-
