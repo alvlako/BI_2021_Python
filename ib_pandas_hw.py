@@ -60,7 +60,7 @@ print('Task 2. Extract specific columns')
 part_nuc = pd.DataFrame()
 part_nuc = nucl.loc[nucl['matches'] > np.mean(nucl['matches'])]
 part_nuc = part_nuc.drop(['A', 'T', 'G', 'C'], axis=1)
-part_nuc = part_nuc.drop(['A_fraction', 'T_fraction', 'G_fraction', 'C_fraction'],axis=1)
+part_nuc = part_nuc.drop(['A_fraction', 'T_fraction', 'G_fraction', 'C_fraction'], axis=1)
 print(part_nuc.head())
 
 
@@ -145,6 +145,7 @@ def read_bed6(path):
     bed.columns = ['chromosome', 'start', 'end', 'name', 'score', 'strand']
     return bed
 
+
 # In[107]:
 
 print('type bed absolute path')
@@ -158,7 +159,7 @@ print(bed.head())
 print('Extract simple names of rRNA')
 rna_info = read_gff(path)
 rna_info_convenient = rna_info
-rna_info_convenient['attributes']=rna_info['attributes'].str.extract('(Name.*rRNA)')
+rna_info_convenient['attributes'] = rna_info['attributes'].str.extract('(Name.*rRNA)')
 rna_info_convenient['attributes'] = rna_info_convenient['attributes'].str.replace('Name=', '')
 rna_info_convenient['attributes'] = rna_info_convenient['attributes'].str.replace('_rRNA', '')
 print(rna_info_convenient.head())
