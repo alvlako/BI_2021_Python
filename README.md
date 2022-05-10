@@ -7,4 +7,4 @@ The script does not only make the first iterator, but also shows how it works. F
 
 Do not forget that the second generator iterates for unlimited time. So the script will ask you after showing the first script work, whether you would like to proceed. If you say yes, it will provide you with unlimited amount of evolving sequences. Otherwise, it will raise KeyboardInterrupt and stop the script.
 
-# PEP-8 is not completely satisfied as it does not understand that one variable is actually used but indirectly, via calling function with eval
+### PEP-8 is not completely satisfied as it does not understand that one variable is actually used but indirectly, via calling function with eval
