@@ -14,7 +14,7 @@ def gen_fa(path):
         i = i + 2
 
 
-print ('Please type path to example fasta file')
+print('Please type path to example fasta file')
 path = input()
 
 print(gen_fa(path))
@@ -30,6 +30,7 @@ else:
 
 # Task 2
 
+
 class Evolution:
     def __init__(self, path):
         self.path = path
@@ -42,18 +43,15 @@ class Evolution:
                 self.seqs.append(item)
             print(*self.seqs)
 
-
     def deletion(self, it, ind):
         it = it.replace(it[ind], "")
         return it
-
 
     def insertion(self, it, ind):
         it_list = it.split()
         insert = random.choice(it_list)
         it = it[:ind] + insert + it[ind:]
         return it
-    
 
     def replacement(self, it, ind):
         it_list = it.split()
@@ -61,13 +59,11 @@ class Evolution:
         it = it.replace(it[ind], repl)
         return it
 
-
     def mutate(self, it):
         ind = random.randint(0, len(it)-1)
         fun_list = ['self.deletion(it, ind)', 'self.insertion(it, ind)', 'self.replacement(it, ind)']
         func = random.choice(fun_list)
         return eval(func)
-
 
     def iter_gen(self):
         i = 1
